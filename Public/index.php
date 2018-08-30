@@ -3,8 +3,6 @@
 
     require('Includes/header.php');
 
-    require('../mysql_connect.php');
-
     
    $q = "SELECT categories.cat_id, category, entries.*, subject, body, date_posted 
         FROM categories, entries 
@@ -18,7 +16,7 @@
         $row = mysqli_fetch_assoc($r); 
 
         ?> <h2>
-            <a href="view_entry.php?id=<?php echo $row['entry_id']; ?>"> <?php echo $row['subject']; ?>
+            <a href="view_entry.php?entry_id=<?php echo $row['entry_id']; ?>"> <?php echo $row['subject']; ?>
             </a>
            </h2> <br />
            <i>
@@ -47,7 +45,7 @@
 
                 while ($commrow = mysqli_fetch_assoc($result)){
                     echo '
-                    <a href="view_entry.php?id=' .  $row['entry_id'] . '">' .
+                    <a href="view_entry.php?entry_id=' .  $row['entry_id'] . '">' .
                     $commrow['name'] . "</a>";
                     
                    // $i++; 
@@ -72,7 +70,7 @@
                             while ($prev_row = mysqli_fetch_assoc($r_previous)){
                                 ?>
                                 <li>
-                                    <a href="view_entry.php?id=<?php echo $prev_row['entry_id']; ?>">
+                                    <a href="view_entry.php?entry_id=<?php echo $prev_row['entry_id']; ?>">
                                     <?php
                                         echo $prev_row['subject']; 
 

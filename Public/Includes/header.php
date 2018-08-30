@@ -1,3 +1,6 @@
+<?php
+    require('../mysql_connect.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
